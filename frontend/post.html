@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - BlogSite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">BlogSite</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="submit.html" class="nav-link">Submit Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <article id="blogPost" class="blog-post">
+                <!-- Blog post content will be loaded here -->
+            </article>
+
+            <section class="reviews-section">
+                <h3>Reviews</h3>
+                <div id="reviewsList" class="reviews-list">
+                    <!-- Reviews will be loaded here -->
+                </div>
+
+                <div class="review-form">
+                    <h4>Leave a Review</h4>
+                    <form id="reviewForm">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name:</label>
+                            <input type="text" id="reviewerName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewComment">Comment:</label>
+                            <textarea id="reviewComment" name="comment" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Submit Review</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlogSite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <div class="popup-icon">✓</div>
+            <h3>Success!</h3>
+            <p id="successMessage">Review submitted successfully!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

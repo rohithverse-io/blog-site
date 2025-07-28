@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">BlogSite</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="submit.html" class="nav-link">Submit Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Our Blog</h1>
+                <p>Discover amazing stories and insights from our community</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search blogs by title or excerpt...">
+                    <button type="button" id="searchBtn">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="blogs-section">
+            <div class="container">
+                <h2>Latest Blogs</h2>
+                <div id="blogsGrid" class="blogs-grid">
+                    <!-- Blog cards will be loaded here -->
+                </div>
+                <div id="loadingSpinner" class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading blogs...</p>
+                </div>
+                <div id="noBlogsMessage" class="no-blogs" style="display: none;">
+                    <p>No blogs found matching your search.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlogSite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

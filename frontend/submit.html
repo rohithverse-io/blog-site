@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Blog - BlogSite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="nav-logo">BlogSite</h1>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="submit.html" class="nav-link active">Submit Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form-container">
+                <h1>Submit New Blog Post</h1>
+                <form id="blogForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="excerpt">Excerpt:</label>
+                        <textarea id="excerpt" name="excerpt" rows="3" placeholder="Brief description of your blog post..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">Full Content:</label>
+                        <textarea id="content" name="content" rows="10" placeholder="Write your full blog post here..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category:</label>
+                            <select id="category" name="category" required>
+                                <option value="">Select Category</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Travel">Travel</option>
+                                <option value="Food">Food</option>
+                                <option value="Lifestyle">Lifestyle</option>
+                                <option value="Business">Business</option>
+                                <option value="Health">Health</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="author">Author Name:</label>
+                            <input type="text" id="author" name="author" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Blog Image:</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                        <small>Upload an image for your blog post (JPG, PNG, GIF - Max 5MB)</small>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn">
+                        <span class="btn-text">Submit Blog Post</span>
+                        <span class="btn-loading" style="display: none;">Submitting...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlogSite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <div class="popup-icon">✓</div>
+            <h3>Success!</h3>
+            <p id="successMessage">Blog submitted successfully!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
