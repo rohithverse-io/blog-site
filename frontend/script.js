@@ -1,6 +1,7 @@
 // Global variables
 let allBlogs = [];
 let currentBlogId = null;
+const BASE_URL = 'https://blog-backend-qc11.onrender.com';
 
 // DOM Content Loaded Event
 document.addEventListener('DOMContentLoaded', function() {
@@ -34,7 +35,7 @@ function loadBlogs() {
     if (loadingSpinner) loadingSpinner.style.display = 'block';
     if (noBlogsMessage) noBlogsMessage.style.display = 'none';
     
-    fetch('/api/blogs')
+    fetch(`${BASE_URL}/api/blogs`)
         .then(response => response.json())
         .then(blogs => {
             allBlogs = blogs;
@@ -141,7 +142,7 @@ function initPostPage() {
 }
 
 function loadBlogPost(blogId) {
-    fetch(`/api/blogs/${blogId}`)
+    fetch(`${BASE_URL}/api/blogs/${blogId}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Blog not found');
@@ -224,7 +225,7 @@ function initReviewForm() {
             comment: formData.get('comment')
         };
         
-        fetch(`/api/blogs/${currentBlogId}/reviews`, {
+        fetch(`${BASE_URL}/api/blogs/${currentBlogId}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -264,7 +265,7 @@ function initSubmitPage() {
         
         const formData = new FormData(this);
         
-        fetch('/api/blogs', {
+        fetch(`${BASE_URL}/api/blogs`, {
             method: 'POST',
             body: formData
         })
@@ -316,7 +317,7 @@ function initContactPage() {
             message: formData.get('message')
         };
         
-        fetch('/api/contact', {
+        fetch(`${BASE_URL}/api/contact`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
